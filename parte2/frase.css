@@ -8,3 +8,63 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+main {
+  width: 80%;
+  margin: 10em auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+p {
+  font-size: 2em;
+  border: solid 3px black;
+  padding: 0.5em;
+  line-height: 1.4em;
+}
+i {
+  color: rgb(7, 88, 88);
+  white-space: nowrap;
+  margin-left: 1em;
+}
+.parole {
+  position: relative;
+}
+@keyframes Parola {
+  0% {
+    opacity: 0.2;
+    transform: translate(0, -150px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 150px);
+  }
+}
+
+.parole i:nth-child(1) {
+  position: absolute;
+
+  opacity: 0;
+  animation: Parola 5s ease-in-out;
+}
+.parole i:nth-child(2) {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  animation: Parola 5s ease-in-out 5s;
+}
+.parole i:nth-child(3) {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  animation: Parola 5s ease-in-out 10s;
+}
